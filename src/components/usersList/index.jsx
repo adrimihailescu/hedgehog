@@ -5,6 +5,11 @@ import UserItem from "./userItem";
 const UsersList = () => {
   const [users, setUsers] = useState([]);
 
+  const deleteUserById = (id) => {
+    const updatedUsers = users.filter((user) => user.id !== id);
+    setUsers(updatedUsers);
+  };
+
   useEffect(() => {
     const getUsers = async () => {
       const res = await fetch(`${BASE_API}users`);
@@ -21,7 +26,13 @@ const UsersList = () => {
       <div>
         {users.length &&
           users.map((user) => {
-            return <UserItem key={user.id} user={user} />;
+            return (
+              <UserItem
+                key={`user-${user.id}`}
+                user={user}
+                deleteUserById={deleteUserById}
+              />
+            );
           })}
       </div>
     </div>
