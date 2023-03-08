@@ -72,7 +72,7 @@ const RegisterAndSignIn = ({ setIsUserSignedIn }) => {
       const { status, token } = await registerOrSignInUser();
       if (status === 200 && token !== null) {
         setIsUserSignedIn(true);
-        console.log(status, token);
+        // console.log(status, token);
       }
     }
   };

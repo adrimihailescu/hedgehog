@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RegisterAndSignIn from "../registerAndSignIn";
+import UsersList from "../usersList";
 
 const PageSwitcher = () => {
   const [isUserSignedIn, setIsUserSignedIn] = useState(false);
@@ -8,7 +9,7 @@ const PageSwitcher = () => {
     return <RegisterAndSignIn setIsUserSignedIn={setIsUserSignedIn} />;
   }
 
-  return <div>Layout page</div>;
+  return <UsersList />;
 };
 
 export default PageSwitcher;
