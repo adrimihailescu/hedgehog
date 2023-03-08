@@ -1,5 +1,5 @@
 import React from "react";
-import { BASE_API } from "../../../constants/api";
+import { BASE_API } from "../../../../../constants/api";
 
 const UserItem = ({ user, deleteUserById }) => {
   const handleOnClick = async (id) => {
@@ -20,7 +20,9 @@ const UserItem = ({ user, deleteUserById }) => {
     <div>
       <h2>{user.first_name}</h2>
       <p>{user.email}</p>
-      <img key={user.avatar} src={user.avatar} alt="a person" />
+      {user.avatar && (
+        <img key={user.avatar} src={user.avatar} alt="a person" />
+      )}
       <button onClick={() => handleOnClick(user.id)}>Delete</button>
     </div>
   );

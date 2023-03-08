@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { BASE_API } from "../../constants/api";
+import { BASE_API } from "../../../constants/api";
 import { Label, RegisterForm, Input, Button } from "./style";
 
 const validEmail = "eve.holt@reqres.in";
