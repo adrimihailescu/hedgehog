@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { BASE_API } from "../../constants/api";
 import { Label, RegisterForm, Input, Button } from "./style";
 
 const validEmail = "eve.holt@reqres.in";
@@ -8,7 +9,7 @@ const componentTypes = {
   register: "REGISTER",
 };
 
-const Register = () => {
+const RegisterAndSignIn = ({ setIsUserSignedIn }) => {
   const [error, setError] = useState(null);
   const [componentType, setComponentType] = useState(componentTypes.register);
 
@@ -22,32 +23,16 @@ const Register = () => {
     return setComponentType(componentTypes.register);
   };
 
-  const registerUser = async () => {
-    try {
-      const res = await fetch("https://reqres.in/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: emailRef.current.value,
-          password: passwordRef.current.value,
-        }),
-      });
-
-      setError(null);
-      emailRef.current.value = "";
-      passwordRef.current.value = "";
-
-      return res.json();
-    } catch (error) {
-      console.log(error);
+  const registerOrSignInUser = async () => {
+    let callType;
+    if (componentType === componentTypes.register) {
+      callType = "register";
+    } else {
+      callType = "login";
     }
-  };
 
-  const signInUser = async () => {
     try {
-      const res = await fetch("https://reqres.in/api/login", {
+      const res = await fetch(`${BASE_API}${callType}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,7 +47,8 @@ const Register = () => {
       emailRef.current.value = "";
       passwordRef.current.value = "";
 
-      return res.json();
+      const { token } = await res.json();
+      return { status: res.status, token };
     } catch (error) {
       console.log(error);
     }
@@ -83,14 +69,11 @@ const Register = () => {
     if (submitError?.length) {
       setError(submitError);
     } else {
-      let userData;
-      if (componentType === componentTypes.register) {
-        userData = await registerUser();
-      } else {
-        userData = await signInUser();
+      const { status, token } = await registerOrSignInUser();
+      if (status === 200 && token !== null) {
+        setIsUserSignedIn(true);
+        console.log(status, token);
       }
-
-      console.log(userData);
     }
   };
 
@@ -128,4 +111,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterAndSignIn;

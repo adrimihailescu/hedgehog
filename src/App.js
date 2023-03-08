@@ -1,7 +1,7 @@
-import Register from "./components/register";
-
+import React from "react";
+import PageSwitcher from "./components/pageSwitcher";
 function App() {
-  return <Register />;
+  return <PageSwitcher />;
 }
 
 export default App;
