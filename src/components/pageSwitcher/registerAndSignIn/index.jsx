@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { BASE_API } from "../../../constants/api";
-import { Label, RegisterForm, Input, Button } from "./style";
+import { Label, Input, Button, UserForm } from "../../../sharedStyles/index";
+import { Wrapper } from "../style";
 
 const validEmail = "eve.holt@reqres.in";
 const validPassword = "pistol";
@@ -78,8 +79,8 @@ const RegisterAndSignIn = ({ setIsUserSignedIn }) => {
   };
 
   return (
-    <>
-      <RegisterForm onSubmit={handleFormSubmit}>
+    <Wrapper>
+      <UserForm onSubmit={handleFormSubmit}>
         <Label>
           Email
           <Input
@@ -102,12 +103,12 @@ const RegisterAndSignIn = ({ setIsUserSignedIn }) => {
           {componentType === componentTypes.register ? "Register" : "Log in"}
         </Button>
         {error && <p>{error}</p>}
-      </RegisterForm>
+      </UserForm>
       <Button onClick={() => handleComponentType()}>
         Go to
         {componentType === componentTypes.register ? " Log in" : " Register"}
       </Button>
-    </>
+    </Wrapper>
   );
 };
 

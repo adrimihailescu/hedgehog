@@ -25,7 +25,7 @@ export const UserForm = styled.form`
 `;
 
 export const Label = styled.label`
-  margin: 10px;
+  margin-bottom: 10px;
   color: ${stylesVariables.color.primary};
   font-weight: bold;
 `;
@@ -36,8 +36,7 @@ export const Input = styled.input`
   padding: 10px;
   width: 100%;
   display: block;
-
-  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export const Button = styled.button`

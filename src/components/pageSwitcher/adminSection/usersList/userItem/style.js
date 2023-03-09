@@ -13,11 +13,12 @@ export const CardItem = styled.li`
   font-weight: bold;
 
   h3 {
-    padding-bottom: 0px;
+    font-size: 24px;
   }
 
   p {
     font-style: italic;
+    padding-bottom: 10px;
   }
 
   img {
@@ -26,7 +27,7 @@ export const CardItem = styled.li`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     border-radius: 50%;
   }
 
@@ -35,6 +36,9 @@ export const CardItem = styled.li`
     background-color: ${stylesVariables.color.mainColor};
     padding: 10px;
     border: none;
+    font-size: 16px;
+    color: ${stylesVariables.color.primary};
+    font-weight: bold;
 
     &:hover {
       box-shadow: 0px 0px 20px -2px ${stylesVariables.color.secondary};

@@ -9,6 +9,7 @@ export const FormWrapper = styled.div`
 
   h3 {
     color: ${stylesVariables.color.primary};
+    font-size: 24px;
   }
 
   p {
