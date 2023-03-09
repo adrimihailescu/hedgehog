@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { BASE_API } from "../../../constants/api";
-import { Label, Input, Button, UserForm } from "../../../sharedStyles/index";
-import { Wrapper } from "../style";
+import { Label, Input, Button, RegisterForm, ButtonWrapper } from "./style";
 
 const validEmail = "eve.holt@reqres.in";
 const validPassword = "pistol";
@@ -79,36 +78,36 @@ const RegisterAndSignIn = ({ setIsUserSignedIn }) => {
   };
 
   return (
-    <Wrapper>
-      <UserForm onSubmit={handleFormSubmit}>
-        <Label>
-          Email
-          <Input
-            ref={emailRef}
-            type="email"
-            name="email"
-            placeholder="johnDoe@email.com"
-          />
-        </Label>
-        <Label>
-          Password
-          <Input
-            ref={passwordRef}
-            type="password"
-            name="password"
-            placeholder="*******"
-          />
-        </Label>
+    <RegisterForm onSubmit={handleFormSubmit}>
+      <Label>
+        Email
+        <Input
+          ref={emailRef}
+          type="email"
+          name="email"
+          placeholder="johnDoe@email.com"
+        />
+      </Label>
+      <Label>
+        Password
+        <Input
+          ref={passwordRef}
+          type="password"
+          name="password"
+          placeholder="*******"
+        />
+      </Label>
+      <ButtonWrapper>
         <Button type="submit">
           {componentType === componentTypes.register ? "Register" : "Log in"}
         </Button>
-        {error && <p>{error}</p>}
-      </UserForm>
-      <Button onClick={() => handleComponentType()}>
-        Go to
-        {componentType === componentTypes.register ? " Log in" : " Register"}
-      </Button>
-    </Wrapper>
+        <Button type="button" onClick={() => handleComponentType()}>
+          Go to
+          {componentType === componentTypes.register ? " Log in" : " Register"}
+        </Button>
+      </ButtonWrapper>
+      {error && <p>{error}</p>}
+    </RegisterForm>
   );
 };
 

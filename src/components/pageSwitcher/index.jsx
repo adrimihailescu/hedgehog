@@ -5,7 +5,7 @@ import RegisterAndSignIn from "./registerAndSignIn";
 const PageSwitcher = () => {
   const [isUserSignedIn, setIsUserSignedIn] = useState(false);
 
-  if (isUserSignedIn) {
+  if (!isUserSignedIn) {
     return <RegisterAndSignIn setIsUserSignedIn={setIsUserSignedIn} />;
   }
 
