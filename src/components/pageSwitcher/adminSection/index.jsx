@@ -3,14 +3,8 @@ import { BASE_API } from "../../../constants/api";
 import AddNewUser from "./addUser";
 import UsersList from "./usersList";
 
-// let newUserName = "morpheus";
-// let newUserJob = "leader";
-
 const AdminSection = () => {
   const [users, setUsers] = useState();
-
-  // const newUserNameRef = useRef();
-  // const newUserJobRef = useRef();
 
   const deleteUserById = (id) => {
     const updatedUsers = users.filter((user) => user.id !== id);
@@ -19,13 +13,13 @@ const AdminSection = () => {
 
   const addNewUser = ({ name, job, id }) => {
     setUsers([
-      ...users,
       {
         first_name: name,
         email: `${name}@${job}.com`,
         id,
-        avatar: "https://picsum.photos/150",
+        avatar: "https://picsum.photos/130",
       },
+      ...users,
     ]);
   };
 
