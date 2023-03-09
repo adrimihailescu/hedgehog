@@ -1,4 +1,4 @@
-// import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const stylesVariables = {
   color: {
@@ -16,3 +16,38 @@ const stylesVariables = {
 };
 
 export default stylesVariables;
+
+export const UserForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+`;
+
+export const Label = styled.label`
+  margin: 10px;
+  color: ${stylesVariables.color.primary};
+  font-weight: bold;
+`;
+
+export const Input = styled.input`
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  display: block;
+
+  margin-top: 10px;
+`;
+
+export const Button = styled.button`
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  margin: 0 auto;
+  color: ${stylesVariables.color.primary};
+
+  &:hover {
+    box-shadow: 0px 0px 20px -2px ${stylesVariables.color.primary};
+  }
+`;

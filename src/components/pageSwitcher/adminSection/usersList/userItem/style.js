@@ -34,5 +34,10 @@ export const CardItem = styled.li`
     border-radius: 10px;
     background-color: ${stylesVariables.color.mainColor};
     padding: 10px;
+    border: none;
+
+    &:hover {
+      box-shadow: 0px 0px 20px -2px ${stylesVariables.color.secondary};
+    }
   }
 `;

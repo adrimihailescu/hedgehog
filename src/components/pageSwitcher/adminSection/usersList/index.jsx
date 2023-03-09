@@ -5,7 +5,7 @@ import { Cards } from "./style";
 const UsersList = ({ users, deleteUserById }) => {
   return (
     <div>
-      <h2>Your dashboard</h2>
+      <h2>Meet the hedgehogs!</h2>
       <Cards>
         {users &&
           users.map((user) => {

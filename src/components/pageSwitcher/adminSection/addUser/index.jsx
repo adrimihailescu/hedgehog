@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import { BASE_API } from "../../../../constants/api";
+import { UserForm, Input, Label, Button } from "../../../../sharedStyles/index";
+import { FormWrapper } from "./style";
 
 const AddNewUser = ({ addNewUser }) => {
   const [error, setError] = useState(null);
@@ -59,21 +61,21 @@ const AddNewUser = ({ addNewUser }) => {
   };
 
   return (
-    <div>
-      <p>Add New User</p>
-      <form onSubmit={handleFormSubmit}>
-        <label>
+    <FormWrapper>
+      <h3>Add New Hedgehog</h3>
+      <UserForm onSubmit={handleFormSubmit}>
+        <Label>
           Name
-          <input type="text" name="name" ref={nameRef} />
-        </label>
-        <label>
+          <Input type="text" name="name" ref={nameRef} />
+        </Label>
+        <Label>
           Job
-          <input type="text" name="job" ref={jobRef} />
-        </label>
-        <button type="submit">Add</button>
+          <Input type="text" name="job" ref={jobRef} />
+        </Label>
+        <Button type="submit">Add New User</Button>
         {error && <p>{error}</p>}
-      </form>
-    </div>
+      </UserForm>
+    </FormWrapper>
   );
 };
 

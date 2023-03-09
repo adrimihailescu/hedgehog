@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BASE_API } from "../../../constants/api";
 import AddNewUser from "./addUser";
 import UsersList from "./usersList";
+import { SectionWrapper } from "./style";
 
 const AdminSection = () => {
   const [users, setUsers] = useState();
@@ -34,10 +35,10 @@ const AdminSection = () => {
   }, []);
 
   return (
-    <div>
+    <SectionWrapper>
       <AddNewUser addNewUser={addNewUser} />
       <UsersList users={users} deleteUserById={deleteUserById} />
-    </div>
+    </SectionWrapper>
   );
 };
 
