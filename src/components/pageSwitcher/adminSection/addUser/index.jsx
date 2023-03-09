@@ -62,7 +62,7 @@ const AddNewUser = ({ addNewUser }) => {
 
   return (
     <FormWrapper>
-      <h3>Add New Hedgehog</h3>
+      <h2>Hello</h2>
       <UserForm onSubmit={handleFormSubmit}>
         <Label>
           Name

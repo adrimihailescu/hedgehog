@@ -22,21 +22,40 @@ export const UserForm = styled.form`
   flex-direction: column;
   justify-content: center;
   padding: 10px;
+
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 `;
 
 export const Label = styled.label`
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
   color: ${stylesVariables.color.primary};
   font-weight: bold;
+
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+  }
 `;
 
 export const Input = styled.input`
   border-radius: 10px;
   border: none;
   padding: 10px;
-  width: 100%;
+  width: auto;
   display: block;
   margin-bottom: 10px;
+
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    margin-right: 20px;
+    margin-left: 15px;
+  }
 `;
 
 export const Button = styled.button`
@@ -45,6 +64,11 @@ export const Button = styled.button`
   padding: 10px;
   margin: 0 auto;
   color: ${stylesVariables.color.primary};
+
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    margin-right: 20px;
+    margin-left: 15px;
+  }
 
   &:hover {
     box-shadow: 0px 0px 20px -2px ${stylesVariables.color.primary};

@@ -1,11 +1,11 @@
 import React from "react";
 import UserItem from "./userItem/index";
-import { Cards, UsersWrapper } from "./style";
+import { Cards, UsersListWrapper } from "./style";
 
 const UsersList = ({ users, deleteUserById }) => {
   return (
-    <UsersWrapper>
-      <h2>Meet the hedgehogs!</h2>
+    <UsersListWrapper>
+      <h3>Meet your fellow hedgehogs!</h3>
       <Cards>
         {users &&
           users.map((user) => {
@@ -18,7 +18,7 @@ const UsersList = ({ users, deleteUserById }) => {
             );
           })}
       </Cards>
-    </UsersWrapper>
+    </UsersListWrapper>
   );
 };
 

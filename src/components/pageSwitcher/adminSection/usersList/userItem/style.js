@@ -14,6 +14,7 @@ export const CardItem = styled.li`
 
   h3 {
     font-size: 24px;
+    color: ${stylesVariables.color.secondary};
   }
 
   p {

@@ -8,9 +8,10 @@ export const Cards = styled.ul`
   padding: 10px 10px;
 `;
 
-export const UsersWrapper = styled.div`
-  h2 {
+export const UsersListWrapper = styled.div`
+  h3 {
     font-size: 24px;
     color: ${stylesVariables.color.primary};
+    margin-left: 10px;
   }
 `;
