@@ -1,11 +1,12 @@
 import React from "react";
 import UserItem from "./userItem/index";
+import { Cards } from "./style";
 
 const UsersList = ({ users, deleteUserById }) => {
   return (
     <div>
-      <h1>Your dashboard</h1>
-      <div>
+      <h2>Your dashboard</h2>
+      <Cards>
         {users &&
           users.map((user) => {
             return (
@@ -16,7 +17,7 @@ const UsersList = ({ users, deleteUserById }) => {
               />
             );
           })}
-      </div>
+      </Cards>
     </div>
   );
 };
