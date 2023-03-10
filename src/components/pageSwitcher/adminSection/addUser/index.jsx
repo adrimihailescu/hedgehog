@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { BASE_API } from "../../../../constants/api";
-import { UserForm, Input, Label, Button } from "../../../../sharedStyles/index";
-import { FormWrapper } from "./style";
+import { FormWrapper, UserForm, Input, Label, Button } from "./style";
 
 const AddNewUser = ({ addNewUser }) => {
   const [error, setError] = useState(null);
@@ -65,16 +64,16 @@ const AddNewUser = ({ addNewUser }) => {
       <h2>Hello</h2>
       <UserForm onSubmit={handleFormSubmit}>
         <Label>
-          Name
+          <span>Name</span>
           <Input type="text" name="name" ref={nameRef} />
         </Label>
         <Label>
-          Job
+          <span>Job</span>
           <Input type="text" name="job" ref={jobRef} />
         </Label>
         <Button type="submit">Add New User</Button>
-        {error && <p>{error}</p>}
       </UserForm>
+      {error && <p>{error}</p>}
     </FormWrapper>
   );
 };

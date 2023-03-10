@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import stylesVariables from "../../../sharedStyles";
 
 const GlobalStyle = createGlobalStyle`
@@ -62,4 +62,7 @@ html, body, div, span, applet, object, iframe,
   }
 `;
 
+export const LayoutWrapper = styled.main`
+  padding: 10px;
+`;
 export default GlobalStyle;

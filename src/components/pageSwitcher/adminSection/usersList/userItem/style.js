@@ -12,11 +12,6 @@ export const CardItem = styled.li`
   color: ${stylesVariables.color.secondary};
   font-weight: bold;
 
-  h3 {
-    font-size: 24px;
-    color: ${stylesVariables.color.secondary};
-  }
-
   p {
     font-style: italic;
     padding-bottom: 10px;
@@ -45,4 +40,9 @@ export const CardItem = styled.li`
       box-shadow: 0px 0px 20px -2px ${stylesVariables.color.secondary};
     }
   }
+`;
+
+export const CardTitle = styled.h4`
+  font-size: 24px;
+  color: ${stylesVariables.color.secondary};
 `;

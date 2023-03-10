@@ -1,6 +1,6 @@
 import React from "react";
 import { BASE_API } from "../../../../../constants/api";
-import { CardItem } from "./style";
+import { CardItem, CardTitle } from "./style";
 
 const UserItem = ({ user, deleteUserById }) => {
   const handleOnClick = async (id) => {
@@ -19,7 +19,7 @@ const UserItem = ({ user, deleteUserById }) => {
 
   return (
     <CardItem>
-      <h3>{user.first_name}</h3>
+      <CardTitle>{user.first_name}</CardTitle>
       <p>{user.email}</p>
       {user.avatar && (
         <img key={user.avatar} src={user.avatar} alt="a person" />
