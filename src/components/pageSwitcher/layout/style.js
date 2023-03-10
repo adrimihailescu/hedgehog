@@ -65,4 +65,10 @@ html, body, div, span, applet, object, iframe,
 export const LayoutWrapper = styled.main`
   padding: 10px;
 `;
+
+export const PageTitle = styled.h1`
+  font-size: 32px;
+  text-align: center;
+  color: ${stylesVariables.color.primary};
+`;
 export default GlobalStyle;

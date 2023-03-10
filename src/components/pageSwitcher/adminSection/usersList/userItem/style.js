@@ -12,6 +12,10 @@ export const CardItem = styled.li`
   color: ${stylesVariables.color.secondary};
   font-weight: bold;
 
+  &:hover {
+    box-shadow: 0px 0px 20px -2px ${stylesVariables.color.mainColor};
+  }
+
   p {
     font-style: italic;
     padding-bottom: 10px;
