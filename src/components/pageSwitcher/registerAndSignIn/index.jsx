@@ -56,14 +56,14 @@ const RegisterAndSignIn = ({ setIsUserSignedIn }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    let submitError = "";
+    let submitError = [];
 
     if (emailRef.current.value !== validEmail) {
-      submitError = `Only valid email is: ${validEmail} | `;
+      submitError.push(`Only valid email is: ${validEmail}`);
     }
 
     if (passwordRef.current.value !== validPassword) {
-      submitError += ` Only valid password is: ${validPassword}.`;
+      submitError.push(`Only valid password is: ${validPassword}`);
     }
 
     if (submitError?.length) {
@@ -80,7 +80,7 @@ const RegisterAndSignIn = ({ setIsUserSignedIn }) => {
   return (
     <RegisterForm onSubmit={handleFormSubmit}>
       <Label>
-        Email
+        <span>Email</span>
         <Input
           ref={emailRef}
           type="email"
@@ -89,7 +89,7 @@ const RegisterAndSignIn = ({ setIsUserSignedIn }) => {
         />
       </Label>
       <Label>
-        Password
+        <span>Password</span>
         <Input
           ref={passwordRef}
           type="password"
@@ -106,7 +106,7 @@ const RegisterAndSignIn = ({ setIsUserSignedIn }) => {
           {componentType === componentTypes.register ? " Log in" : " Register"}
         </Button>
       </ButtonWrapper>
-      {error && <p>{error}</p>}
+      {error && error.map((err, index) => <p key={`err-${index}`}>{err}</p>)}
     </RegisterForm>
   );
 };

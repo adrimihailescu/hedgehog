@@ -11,8 +11,7 @@ export const RegisterForm = styled.form`
   background-color: ${stylesVariables.color.primary};
   border-radius: 10px;
   padding: 10px;
-  margin: auto;
-  max-width: 400px;
+  width: 250px;
 
   &:hover {
     box-shadow: 0px 0px 20px -2px ${stylesVariables.color.mainColor};
@@ -20,6 +19,7 @@ export const RegisterForm = styled.form`
 
   p {
     font-size: 16px;
+    text-align: center;
   }
 `;
 
@@ -29,6 +29,12 @@ export const Label = styled.label`
   margin-bottom: 15px;
   color: ${stylesVariables.color.secondary};
   font-weight: bold;
+
+  span {
+    align-self: start;
+    padding-right: 10px;
+    padding-bottom: 5px;
+  }
 `;
 
 export const Input = styled.input`

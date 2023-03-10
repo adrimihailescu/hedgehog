@@ -35,14 +35,14 @@ const AddNewUser = ({ addNewUser }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    let submitError = "";
+    let submitError = [];
 
     if (!nameRef.current.value.length) {
-      submitError = "Name cannot be blank. | ";
+      submitError.push("Name cannot be blank.");
     }
 
     if (!jobRef.current.value.length) {
-      submitError += "Job cannot be blank.";
+      submitError.push("Job cannot be blank.");
     }
 
     if (submitError?.length) {
@@ -73,7 +73,7 @@ const AddNewUser = ({ addNewUser }) => {
         </Label>
         <Button type="submit">Add New User</Button>
       </UserForm>
-      {error && <p>{error}</p>}
+      {error && error.map((err, index) => <p key={`err-${index}`}>{err}</p>)}
     </FormWrapper>
   );
 };
